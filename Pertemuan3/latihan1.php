@@ -3,7 +3,7 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan3 -  ..Februari 2021
+Pertemuan3 -  18 Februari 2021
 mempelajari pengulangan PHP
 */
 ?>
