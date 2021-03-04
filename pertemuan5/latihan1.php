@@ -3,7 +3,7 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan2 - 2 maret 2021
+Pertemuan5 - 2 maret 2021
 mempelajari sintak PHP
 */
 ?>
