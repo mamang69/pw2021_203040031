@@ -1,8 +1,9 @@
-    <!---
+<!-- 
 Eldi Anugrah Pratama
 203040031
-Rabu 9.00 - 10.00
-    --->
+Rabu pukul 10:00
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +12,15 @@ Rabu 9.00 - 10.00
     <title>Latihan 1 C</title>
 
     <style>
-        .mamang {
+        .div {
             background-color: salmon;
-            height: 40px;
-            width: 40px;
-            line-height: 40px;
+            height: 60px;
+            width: 60px;
+            line-height: 50px;
             text-align: center;
             margin-bottom: 20px;
-            margin-right: 12px;
-            border-radius: 55px;
+            margin-right: 20px;
+            border-radius: 40px;
             display: inline-block;
             border: 1px solid black;
             font-weight: bold;
@@ -30,7 +31,7 @@ Rabu 9.00 - 10.00
 
 <?php for( $i = 1; $i <= 3; $i++ ) : ?>
     <?php for( $j = 1; $j <= $i; $j++ ) : ?>
-        <div class="mamang"><?= $i ?></div>
+        <div class="div"><?= $i ?></div>
     <?php endfor; ?>
     <br>
 <?php endfor; ?>

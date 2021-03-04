@@ -1,9 +1,8 @@
-    <!---
+<!-- 
 Eldi Anugrah Pratama
 203040031
-Rabu 9.00 - 10.00
-    --->
-       
+Rabu pukul 10:00
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +18,8 @@ Rabu 9.00 - 10.00
     </style>
 </head>
 <body>
-
-    <table border="7" cellpadding="30" cellspacing="5">
+    
+    <table border="3" cellpadding="30" cellspacing="5">
             <?php for( $i = 1; $i <= 6; $i++ ) : ?>
                 <?php if( $i % 2 == 1 ) : ?>
                     <tr class="warna-baris-1"> 

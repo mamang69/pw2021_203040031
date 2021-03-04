@@ -1,8 +1,8 @@
-    <!---
+<!-- 
 Eldi Anugrah Pratama
 203040031
-Rabu 9.00 - 10.00
-    --->
+Rabu pukul 10:00
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
