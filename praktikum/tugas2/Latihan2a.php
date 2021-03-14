@@ -1,6 +1,8 @@
-<?php
-
-?>
+<!-- 
+Nama : Eldi Anugrah Pratama
+NRP : 203040031
+Praktikum : Rabu pukul 09:00 - 10:00 WIB
+-->
 <!DOCTYPE html>
 <html lang="en">
 
