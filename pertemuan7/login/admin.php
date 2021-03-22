@@ -2,7 +2,7 @@
 /*
 Eldi Anugrah Pratama
 203040031
-https://github.com/IsmailFikri12/pw2021_203040008
+https://github.com/mamang69/pw2021_203040031
 pertemuan 7 - 22 Maret 2021
 mempelajari mengenai GET and POST
 */
