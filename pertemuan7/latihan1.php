@@ -1,30 +1,50 @@
 <?php 
 /*
-Eldi Anugrah Pratama
-203040031
+Ismail Fikri
+203040008
 https://github.com/IsmailFikri12/pw2021_203040008
-pertemuan 7 - 22 Maret 2021
-mempelajari mengenai GET and POST
+pertemuan 7 - 18 Maret 2021
+mempelajari mengenai sintaks PHP 
+GET and POST
 */
 ?> 
+
+<?php
+// variabel Scope / Lingkup variabel
+// $x = 10;
+
+// function tampilx() {
+//     global $x;
+//     echo $x;
+// }
+
+// tampilx();
+// ?>
+
+<?php
+// SUPERGLOBALS
+// variabel global milik PHP
+// merupakan array Associative
+// echo $_SERVER["SERVER_NAME"];
+?>
+
 <?php
 // $_GET
-$character = [
+$char = [
     [
-        "judul" => "Tensei Shitara Slime Datta Ken", 
+        "judul" => "Tensura",
         "nama" => "Rimuru Tempest",
-        "gambar" => "rim.png",
-        "Skill" => "Turn null"
+        "skill" => "Turn Null",
+        "gambar" => "rim.png"
     ],
     [
-        "judul" => "Jujutsu Kaisen", 
+        "judul" => "Jujutsu Kaisen",
         "nama" => "Gojo Satoru",
-        "gambar" => "gojo.jpg",
-        "Skill" => "Infinity"
-    ],
-    
+        "skill" => "Six Eye",
+        "gambar" => "gojo.jpg"
+        
+    ]
 ];
-
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +56,17 @@ $character = [
     <title>GET</title>
 </head>
 <body>
-<h1>Char OP</h1>
-<ul>
-    <?php foreach( $character as $char ) : ?>
-        <li>
-            <a href="latihan2.php?judul=<?=$char["judul"];?>"><?=$char["judul"];?></li></a>
-    <?php endforeach; ?>
+    <h1>Daftar Anime</h1>
 
-</ul>
+    <ul>
+    <?php foreach( $char as $ch ) : ?>
+        <li>
+            <a href="latihan2.php?judul= <?= $ch["judul"]; ?>
+            &nama=<?= $ch["nama"]; ?>
+            &skill=<?= $ch["skill"]; ?>
+            &gambar=<?= $ch["gambar"]; ?>"><?= $ch["judul"]; ?> </a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
 </body>
 </html>
