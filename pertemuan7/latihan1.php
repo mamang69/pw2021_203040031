@@ -1,11 +1,10 @@
 <?php 
 /*
-Ismail Fikri
-203040008
+Eldi Anugrah Pratama
+203040031
 https://github.com/IsmailFikri12/pw2021_203040008
-pertemuan 7 - 18 Maret 2021
-mempelajari mengenai sintaks PHP 
-GET and POST
+pertemuan 7 - 22 Maret 2021
+mempelajari mengenai GET and POST
 */
 ?> 
 

@@ -1,3 +1,12 @@
+<?php 
+/*
+Eldi Anugrah Pratama
+203040031
+https://github.com/IsmailFikri12/pw2021_203040008
+pertemuan 7 - 22 Maret 2021
+mempelajari mengenai GET and POST
+*/
+?> 
 <?php
 // cek apakah tidak ada data di $_GET
 if ( !isset($_GET["judul"]) || 
