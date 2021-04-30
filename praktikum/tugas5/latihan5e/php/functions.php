@@ -7,7 +7,7 @@ function koneksi()
     return $conn;
 }
 
-function query($sql) 
+function query($sql)
 {
     $conn = koneksi();
     $result = mysqli_query($conn, "$sql");
@@ -30,13 +30,12 @@ function tambah($data)
 
     $query = "INSERT INTO paint
                     VALUES
-                    ('','$img','$judul','$harga','$deskripsi','$stok')";
-    mysqli_query($conn,$query);
+                    ('','$img','$judul','$harga','$deskripsi','$Stok')";
+    mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
-
 }
 
-function hapus($id) 
+function hapus($id)
 {
     $conn = koneksi();
 
@@ -45,7 +44,8 @@ function hapus($id)
     return mysqli_affected_rows($conn);
 }
 
-function ubah($data) {
+function ubah($data)
+{
     $conn = koneksi();
 
     $id = htmlspecialchars($data['id']);
@@ -53,15 +53,15 @@ function ubah($data) {
     $judul = htmlspecialchars($data['judul']);
     $harga = htmlspecialchars($data['harga']);
     $deskripsi = htmlspecialchars($data['deskripsi']);
-    $Stok = htmlspecialchars($data['stok']);
+    $Stok = htmlspecialchars($data['Stok']);
 
-    $query = "UPDATE buku 
+    $query = "UPDATE paint 
                     SET 
                     img='img',
                     judul='$judul',
                     harga='$harga',
                     deskripsi='$deskripsi',
-                    stok='$stok' 
+                    Stok='$Stok' 
                     WHERE id = $id
                     ";
     mysqli_query($conn, $query);
