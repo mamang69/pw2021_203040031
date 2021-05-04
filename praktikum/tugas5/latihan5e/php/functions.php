@@ -68,4 +68,3 @@ function ubah($data)
     die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
 }
-?>

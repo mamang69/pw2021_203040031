@@ -26,7 +26,7 @@ function tambah($data)
     $judul = htmlspecialchars($data['judul']);
     $harga = htmlspecialchars($data['harga']);
     $deskripsi = htmlspecialchars($data['deskripsi']);
-    $Stok = htmlspecialchars($data['Stok']);
+    $Stok = htmlspecialchars($data['stok']);
 
     $query = "INSERT INTO paint
                     VALUES
@@ -47,15 +47,15 @@ function hapus($id)
 function ubah($data)
 {
     $conn = koneksi();
-
     $id = htmlspecialchars($data['id']);
     $img = htmlspecialchars($data['img']);
     $judul = htmlspecialchars($data['judul']);
     $harga = htmlspecialchars($data['harga']);
     $deskripsi = htmlspecialchars($data['deskripsi']);
-    $Stok = htmlspecialchars($data['Stok']);
+    $Stok = htmlspecialchars($data['stok']);
 
-    $query = "UPDATE buku 
+
+    $query = "UPDATE paint 
                     SET 
                     img='img',
                     judul='$judul',
@@ -64,8 +64,7 @@ function ubah($data)
                     stok='$Stok' 
                     WHERE id = $id
                     ";
-    mysqli_query($conn, $query);
-    die(mysqli_error($conn));
+    mysqli_query($conn, $query)  or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
 }
 
@@ -75,8 +74,8 @@ function registrasi($data)
     $username = strtolower(stripcslashes($data["username"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
 
-    // cek username sudah ada belum
-    $result = mysqli_query($conn, "SELECT username FROM user WHERE = '$username'");
+
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username ' ");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
               alert('username sudah digunakan');
@@ -84,10 +83,10 @@ function registrasi($data)
         return false;
     }
 
-    // enkripsi password
+
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    // tambah user baru
+
     $query_tambah = "INSERT INTO user VALUES('','$username','$password')";
     mysqli_query($conn, $query_tambah);
 

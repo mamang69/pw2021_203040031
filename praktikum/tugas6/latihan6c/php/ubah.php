@@ -20,9 +20,9 @@ if (isset($_POST['ubah'])) {
                 </script>";
     } else {
         echo "<script>
-                    alert('Data Gagal diubah!');
-                    document.location.href = 'admin.php';
-                </script>";
+        alert('Data gagal diubah!');
+        document.location.href = 'admin.php';
+    </script>";
     }
 }
 ?>

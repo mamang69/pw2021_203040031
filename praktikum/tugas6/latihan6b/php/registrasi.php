@@ -15,7 +15,6 @@ if (isset($_POST["register"])) {
 }
 ?>
 
-
 <form action="" method="POST">
   <table>
     <tr>

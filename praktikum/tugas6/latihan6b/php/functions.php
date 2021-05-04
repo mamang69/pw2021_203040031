@@ -53,7 +53,7 @@ function ubah($data)
     $judul = htmlspecialchars($data['judul']);
     $harga = htmlspecialchars($data['harga']);
     $deskripsi = htmlspecialchars($data['deskripsi']);
-    $Stok = htmlspecialchars($data['Stok']);
+    $Stok = htmlspecialchars($data['stok']);
 
     $query = "UPDATE paint 
                     SET 
@@ -75,8 +75,8 @@ function registrasi($data)
     $username = strtolower(stripcslashes($data["username"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
 
-    // cek username sudah ada belum
-    $result = mysqli_query($conn, "SELECT username FROM user WHERE = '$username'");
+
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
               alert('username sudah digunakan');
@@ -84,10 +84,8 @@ function registrasi($data)
         return false;
     }
 
-    // enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    // tambah user baru
     $query_tambah = "INSERT INTO user VALUES('','$username','$password')";
     mysqli_query($conn, $query_tambah);
 

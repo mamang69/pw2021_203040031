@@ -1,17 +1,17 @@
 <?php
 session_start();
 require 'functions.php';
-// melakukan pengecekan apakah user melakukan Login jika redirect ke halaman admin
+
 if (isset($_SESSION['username'])) {
     header("Location: admin.php");
     exit;
 }
-// Login
+
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
-    // mencocokan USERNAME dan PASSWORD
+
     if (mysqli_num_rows($cek_user) > 0) {
         $row = mysqli_fetch_assoc($cek_user);
         if (password_verify($password, $row['password'])) {
@@ -30,12 +30,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
-<form action="" method="POST">
+<form action="" method="POST" style="margin-left: 25px;">
     <?php if (isset($error)) : ?>
-        <p style="color: red; font-style:italic;">Username dan Password salah</p>
+        <p>Username dan Password salah</p>
     <?php endif; ?>
-    <table style="margin-left: 50px;">
+    <table>
         <tr>
             <h2>Masukan Username dan Passsword</h2>
         </tr>
@@ -45,7 +44,7 @@ if (isset($_POST['submit'])) {
             <td><input type="text" name="username"></td>
         </tr>
         <tr>
-            <td><label for="password"><span class="badge bg-success">Password</span></label></td>
+            <td><label for="password">Password</label></td>
             <td>:</td>
             <td><input type="password" name="password"></td>
         </tr>

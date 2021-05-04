@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit;
+}
+
 require 'functions.php';
 
 $id = $_GET['id'];
@@ -22,6 +29,7 @@ if (isset($_POST['ubah'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +38,7 @@ if (isset($_POST['ubah'])) {
 
     <title>My Shop</title>
 </head>
+
 <body>
     <div class="container">
 
@@ -68,4 +77,5 @@ if (isset($_POST['ubah'])) {
     </div>
 
 </body>
+
 </html>

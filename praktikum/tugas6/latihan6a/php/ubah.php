@@ -2,26 +2,27 @@
 require 'functions.php';
 
 $id = $_GET['id'];
-$paint = query("SELECT * FROM paint WHERE id = $id")[0];
 
+$paint = query("SELECT * FROM paint WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
         echo "<script>
-                    alert('Data Berhasil diubah!');
-                    document.location.href = 'admin.php';
-                </script>";
+                alert('Data Berhasil diubah!');
+                document.location.href = 'admin.php';
+          </script>";
     } else {
         echo "<script>
-                    alert('Data Gagal diubah!');
-                    document.location.href = 'admin.php';
-                </script>";
+                alert('Data Gagal diubah!');
+                document.location.href = 'admin.php';
+          </script>";
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +31,7 @@ if (isset($_POST['ubah'])) {
 
     <title>My Shop</title>
 </head>
+
 <body>
     <div class="container">
 
@@ -68,4 +70,5 @@ if (isset($_POST['ubah'])) {
     </div>
 
 </body>
+
 </html>

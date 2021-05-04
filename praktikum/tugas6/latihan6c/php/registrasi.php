@@ -16,10 +16,10 @@ if (isset($_POST["register"])) {
 ?>
 
 
-<form action="" method="POST" >
-  <table >
+<form action="" method="POST">
+  <table>
     <tr>
-      <h2 >Buatlah Username dan Passsword</h2>
+      <h2>Buatlah Username dan Passsword</h2>
     </tr>
     <tr>
       <td><label for="username">Username</label></td>
@@ -32,8 +32,8 @@ if (isset($_POST["register"])) {
       <td><input type="password" name="password"></td>
     </tr>
   </table>
-  <button type="submit" name="register" >REGISTER</button>
+  <button type="submit" name="register">REGISTER</button>
   <div class="login">
-    <p >Sudah punya akun ? Login <a href="login.php">Disini</a></p>
+    <p>Sudah punya akun ? Login <a href="login.php">Disini</a></p>
   </div>
 </form>
