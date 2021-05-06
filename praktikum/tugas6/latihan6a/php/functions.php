@@ -59,7 +59,7 @@ function ubah($data)
 
     $query = "UPDATE paint 
     SET 
-    img='img',
+    img='$img',
     judul='$judul',
     harga='$harga',
     deskripsi='$deskripsi',
