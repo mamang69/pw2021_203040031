@@ -1,0 +1,30 @@
+nav ul a,
+ nav .brand-logo {
+   color: #444;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+ 
+ 
+ .sidenav-trigger {
+   color: #26a69a;
+ }
+ 
+ .card-image{
+   display: flex;
+    width: 50vw;
+    margin: auto;
+    
+ }
+ 
+ .parallax-container {
+   min-height: 380px;
+   line-height: 0;
+   height: auto;
+   color: rgba(255,255,255,.9);
+ }
+   .parallax-container .section {
+     width: 100%;
+   }
