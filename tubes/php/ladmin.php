@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-if (isset($_SESSION['login'])) {
-  header("Location: ../index.php");
+if (isset($_SESSION['ladmin'])) {
+  header("Location: admin.php");
   exit;
 }
 
 require 'functions.php';
 
 // ketika tombol login ditekan
-if (isset($_POST['login'])) {
-  $login = login($_POST);
+if (isset($_POST['ladmin'])) {
+  $ladmin = ladmin($_POST);
 }
 ?>
 
@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
 <html>
 
 <head>
-  <title>Login Form</title>
+  <title>LOGIN ADMIN</title>
   <link rel="stylesheet" type="text/css" href="../css/login.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,12 +30,12 @@ if (isset($_POST['login'])) {
   <img class="wave" src="../aset/img/wave.svg">
   <div class="container">
     <div class="img">
-      <img src="../aset/img/palet.png">
+      <img src="../aset/img/staf.png">
     </div>
     <div class="login-content">
       <form action="" method="POST">
-        <?php if (isset($login['error'])) : ?>
-          <p style="color: red; font-style: italic;"><?= $login['pesan']; ?></p>
+        <?php if (isset($ladmin['error'])) : ?>
+          <p style="color: red; font-style: italic;"><?= $ladmin['pesan']; ?></p>
         <?php endif; ?>
         <h2 class="title">Welcome</h2>
         <div class="input-div one">
@@ -54,9 +54,7 @@ if (isset($_POST['login'])) {
             <input type="password" class="input" name="password" required>
           </div>
         </div>
-        <a href="registrasi.php">Belum punya akun? registrasi sekarang</a>
-        <h1><a href="ladmin.php">Login as Admin</a></h1>
-        <input type="submit" class="btn" value="Login" name="login">
+        <input type="submit" class="btn" value="Login" name="ladmin">
       </form>
     </div>
   </div>

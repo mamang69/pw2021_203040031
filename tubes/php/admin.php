@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login'])) {
-  header("Location: php/login.php");
+if (!isset($_SESSION['ladmin'])) {
+  header("Location: ladmin.php");
   exit;
 }
 
-require 'php/functions.php';
+require 'functions.php';
 
 $paint = query("SELECT * FROM paint");
 
@@ -20,7 +20,7 @@ $paint = query("SELECT * FROM paint");
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+
   <title>Mamang's</title>
 </head>
 
@@ -33,10 +33,13 @@ $paint = query("SELECT * FROM paint");
     <a href="tambah.php">Tambah Data</a>
   </div>
 
+  <h1 style="text-align: center;">Welcome sir</h1>
+
   <form action="" method="get">
     <input type="text" name="keyword" autofocus>
     <button type="submit" name="cari">Cari</button>
   </form>
+
   <div class="table-responsive">
     <table class="table">
       <tr class="table-white">

@@ -39,6 +39,11 @@ $paint = query("SELECT * FROM paint WHERE id = $id");
 
       <a id="logo-container" href="#" class="brand-logo">Mamang'shOp</a>
 
+      <ul class="right hide-on-med-and-down">
+        <li><a href="php/logout.php">logout</a></li>
+      </ul>
+
+      </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -63,8 +68,8 @@ $paint = query("SELECT * FROM paint WHERE id = $id");
               <br>
               <p style="color: #26a69a;"> <span style="font-weight: bold; font-color: blue;"> <?= $paint["harga"]; ?></p> </span>
             </div>
-
           </div>
+          <button><a href="../index.php">back</a></button>
         </div>
       </div>
     </div>

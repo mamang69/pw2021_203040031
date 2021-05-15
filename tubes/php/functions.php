@@ -164,3 +164,26 @@ function registrasi($data)
   mysqli_query($conn, $query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
+
+function ladmin($data)
+{
+  $conn = koneksi();
+
+  $username = htmlspecialchars($data['username']);
+  $password = htmlspecialchars($data['password']);
+
+
+  // cek dulu username 
+  if ($username == 'mamangeldi' && $password == 'tampan') {
+    // set session
+    $_SESSION['ladmin'] = true;
+
+    header("Location: admin.php");
+    exit;
+  } else {
+    return [
+      'error' => true,
+      'pesan' => 'Username / Password Salah!'
+    ];
+  }
+}
