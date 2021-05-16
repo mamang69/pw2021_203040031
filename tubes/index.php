@@ -76,113 +76,106 @@ $paint = query("SELECT * FROM paint");
     </ul>
   </div>
 
+  <div class="cari">
+    <form action="" method="POST">
+      <input type="text" name="keyword" size="40" placeholder="masukan keyword" autocomplete="off" autofocus>
+      <button type="submit" name="cari">Cari</button>
+    </form>
+  </div>
 
-  <div class="wrapper">
-    <div class="container">
-      <div class="search_wrap search_wrap_1">
-        <div class="search_box">
-          <input type="text" class="input" placeholder="search...">
-          <div class="btn btn_common">
-            <i class="small material-icons">search</i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!--   Icon Section   -->
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <?php foreach ($paint as $pt) : ?>
-            <a href="php/detail.php?id=<?= $pt['id']; ?>">
-              <div class="col m6 l3">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="aset/img/<?= $pt["img"]; ?>">
-                  </div>
-                  <div class="card-content">
-                    <p style="color: black;"> <span style="font-weight: bold;"> <?= $pt["judul"]; ?> </span> </p>
-                    <p style="color: #26a69a;"> <span style="font-weight: bold; font-color: blue;"> <?= $pt["harga"]; ?></p> </span>
-                  </div>
+  <!--   Icon Section   -->
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <?php foreach ($paint as $pt) : ?>
+          <a href="php/detail.php?id=<?= $pt['id']; ?>">
+            <div class="col m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="aset/img/<?= $pt["img"]; ?>">
+                </div>
+                <div class="card-content">
+                  <p style="color: black;"> <span style="font-weight: bold;"> <?= $pt["judul"]; ?> </span> </p>
+                  <p style="color: #26a69a;"> <span style="font-weight: bold; font-color: blue;"> <?= $pt["harga"]; ?></p> </span>
                 </div>
               </div>
-            <?php endforeach; ?>
-            </a>
-        </div>
+            </div>
+          <?php endforeach; ?>
+          </a>
       </div>
     </div>
+  </div>
 
-    <!-- Paralax -->
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-          </div>
-        </div>
-      </div>
-      <div class="parallax"><img src="aset/img/alatlukis.png"></div>
-    </div>
-    <!---Footer--->
-    <footer class="page-footer teal">
+  <!-- Paralax -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Company Bio</h5>
-            <p class="grey-text text-lighten-4"> Kami adalah toko online shop yang menjual lukisan dan hiasan hiasan berseni yang dibuat oleh pelukis yang handal. </p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
         </div>
       </div>
-      <div class="footer">
-        <div class="container">
-          Mamang' <a class="brown-text text-lighten-3">shOp</a>
+    </div>
+    <div class="parallax"><img src="aset/img/alatlukis.png"></div>
+  </div>
+  <!---Footer--->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4"> Kami adalah toko online shop yang menjual lukisan dan hiasan hiasan berseni yang dibuat oleh pelukis yang handal. </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <!--  Scripts-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
-    <script>
-      const sidenav = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(sidenav);
-    </script>
+    </div>
+    <div class="footer">
+      <div class="container">
+        Mamang' <a class="brown-text text-lighten-3">shOp</a>
+      </div>
+    </div>
+  </footer>
+  <!--  Scripts-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script>
+    const sidenav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sidenav);
+  </script>
 
-    <script>
-      const slider = document.querySelectorAll('.slider');
-      M.Slider.init(slider, {
-        indicators: false,
-        height: 460,
-        transition: 600,
-        interval: 3000
-      });
+  <script>
+    const slider = document.querySelectorAll('.slider');
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 460,
+      transition: 600,
+      interval: 3000
+    });
 
-      const parallax = document.querySelectorAll('.parallax');
-      M.Parallax.init(parallax);
+    const parallax = document.querySelectorAll('.parallax');
+    M.Parallax.init(parallax);
 
-      const scroll = document.querySelectorAll('.scrollspy');
-      M.ScrollSpy.init(scroll, {
-        scrollOffset: 50
-      });
-    </script>
+    const scroll = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(scroll, {
+      scrollOffset: 50
+    });
+  </script>
 
 </body>
 

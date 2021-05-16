@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
+if (!isset($_SESSION['ladmin'])) {
+  header("Location: admin.php");
   exit;
 }
 
@@ -10,7 +10,7 @@ require 'functions.php';
 
 //jika tidak ada id di url
 if (!isset($_GET['id'])) {
-  header("location : ../index.php");
+  header("location : admin.php");
   exit;
 }
 
@@ -26,7 +26,7 @@ if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
     echo "<script>
     alert('data berhasil diubah');
-    document.location.href = '../index.php';
+    document.location.href = 'admin.php';
     </script>";
   } else {
     echo " data gagal diubah";
