@@ -80,7 +80,7 @@ if (isset($_POST['ubah'])) {
       <li>
         <label>
           gambar :
-          <input type="text" name="gambar" required value="<?= $an['gambar']; ?>">
+          <input type="file" name="gambar" required value="<?= $an['gambar']; ?>">
         </label>
       </li>
       <li>

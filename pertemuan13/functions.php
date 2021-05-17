@@ -33,6 +33,35 @@ function query($query)
 
   return $rows;
 }
+
+function upload()
+{
+  $nama_file = $_FILES['gambar']['name'];
+  $tipe_file = $_FILES['gambar']['type'];
+  $ukuran_file = $_FILES['gambar']['size'];
+  $eror = $_FILES['gambar']['error'];
+  $tmp_file = $_FILES['gambar']['tmp_name'];
+
+  //ketika tidak ada gambar yang dipilih
+  if ($eror == 4) {
+    echo "<script>
+            alert('pilih gambar terlebih dahulu!');
+          </script>";
+    return false;
+  }
+
+  //cek ekstensi file
+  $daftar_gambar = ['jpg', 'jpeg', 'png'];
+  $ekstensi_file = explode('.', $nama_file);
+  $ekstensi_file = strtolower(end($ekstensi_file));
+  if (!in_array($ekstensi_file, $daftar_gambar)) {
+    echo "<script>
+            alert('yang anda pilih bukan gambar!');
+          </script>";
+    return false;
+  }
+}
+
 function tambah($data)
 {
   $conn = koneksi();
@@ -40,7 +69,15 @@ function tambah($data)
   $judul = htmlspecialchars($data['judul']);
   $nama = htmlspecialchars($data['nama']);
   $skill = htmlspecialchars($data['skill']);
-  $gambar = htmlspecialchars($data['gambar']);
+  // $gambar = htmlspecialchars($data['gambar']);
+
+
+
+  //upload gambar
+  $gambar = upload();
+  if (!$gambar) {
+    return false;
+  }
 
   $query = "INSERT INTO anime VALUES(null,'$judul','$nama','$skill','$gambar');";
 
