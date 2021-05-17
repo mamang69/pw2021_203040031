@@ -8,19 +8,19 @@ if (!isset($_SESSION['ladmin'])) {
 
 require 'functions.php';
 
-//jika tidak ada id di url
+
 if (!isset($_GET['id'])) {
   header("location : admin.php");
   exit;
 }
 
-//ambil id dari url
+
 $id = $_GET['id'];
 
-//query anime berdasarkan id
+
 $paint = query("SELECT * FROM paint WHERE id=$id");
 
-//cek apakah tombol ubah telah ditekan
+
 
 if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
@@ -56,8 +56,8 @@ if (isset($_POST['ubah'])) {
       <input type="hidden" name="id" id="id" value="<?= $paint['id']; ?>">
       <ul>
         <li>
-          <label for="img">Gambar :</label><br>
-          <input type="file" name="img" id="img" require value="<?= $paint['img']; ?>"><br><br>
+          <label for="img">Img :</label><br>
+          <input type="text" name="img" id="img" required value="<?= $paint['img']; ?>"><br><br>
         </li>
         <li>
           <label for="judul">Judul :</label><br>

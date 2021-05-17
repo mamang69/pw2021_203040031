@@ -10,6 +10,12 @@ require 'php/functions.php';
 
 $paint = query("SELECT * FROM paint");
 
+
+if (isset($_POST['cari'])) {
+  $paint = cari($_POST['keyword']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -76,32 +82,38 @@ $paint = query("SELECT * FROM paint");
     </ul>
   </div>
 
+
+  <!---- searching---->
   <div class="cari">
     <form action="" method="POST">
-      <input type="text" name="keyword" size="40" placeholder="masukan keyword" autocomplete="off" autofocus>
-      <button type="submit" name="cari">Cari</button>
+      <input type="text" name="keyword" size="40" placeholder="masukan keyword" autocomplete="off" autofocus class="keyword">
+      <button type="submit" name="cari" class="tombol-cari">Cari!</button>
     </form>
   </div>
+  <br>
+
 
   <!--   Icon Section   -->
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <?php foreach ($paint as $pt) : ?>
-          <a href="php/detail.php?id=<?= $pt['id']; ?>">
-            <div class="col m6 l3">
-              <div class="card">
-                <div class="card-image">
-                  <img src="aset/img/<?= $pt["img"]; ?>">
-                </div>
-                <div class="card-content">
-                  <p style="color: black;"> <span style="font-weight: bold;"> <?= $pt["judul"]; ?> </span> </p>
-                  <p style="color: #26a69a;"> <span style="font-weight: bold; font-color: blue;"> <?= $pt["harga"]; ?></p> </span>
+  <div class="kontener">
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <?php foreach ($paint as $pt) : ?>
+            <a href="php/detail.php?id=<?= $pt['id']; ?>">
+              <div class="col m6 l3">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="aset/img/<?= $pt["img"]; ?>">
+                  </div>
+                  <div class="card-content">
+                    <p style="color: black;"> <span style="font-weight: bold;"> <?= $pt["judul"]; ?> </span> </p>
+                    <p style="color: #26a69a;"> <span style="font-weight: bold; font-color: blue;"> <?= $pt["harga"]; ?></p> </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php endforeach; ?>
-          </a>
+            <?php endforeach; ?>
+            </a>
+        </div>
       </div>
     </div>
   </div>
@@ -117,6 +129,7 @@ $paint = query("SELECT * FROM paint");
     </div>
     <div class="parallax"><img src="aset/img/alatlukis.png"></div>
   </div>
+
   <!---Footer--->
   <footer class="page-footer teal">
     <div class="container">
@@ -153,7 +166,7 @@ $paint = query("SELECT * FROM paint");
   </footer>
   <!--  Scripts-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/ajax.js"></script>
   <script>
     const sidenav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(sidenav);

@@ -60,6 +60,7 @@ function ubah($data)
   $deskripsi = htmlspecialchars($data['deskripsi']);
   $Stok = htmlspecialchars($data['stok']);
 
+
   $query = "UPDATE paint 
                     SET 
                     img='img',
@@ -69,7 +70,7 @@ function ubah($data)
                     stok='$Stok' 
                     WHERE id = $id
                     ";
-  mysqli_query($conn, $query) or die(mysqli_error($conn));
+  mysqli_query($conn, $query)  or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
 
@@ -77,11 +78,11 @@ function cari($keyword)
 {
   $conn = koneksi();
 
-  $query = "SELECT * FROM anime
-              WHERE 
-            nama LIKE '%$keyword%' OR
-            judul LIKE '%$keyword%'
-          ";
+  $query = ("SELECT * FROM paint WHERE
+  judul LIKE '%$keyword%' OR
+  harga LIKE '%$keyword%' OR
+  deskripsi LIKE '%$keyword%' OR
+  stok LIKE '%$keyword%' ");
 
   $result = mysqli_query($conn, $query);
 
