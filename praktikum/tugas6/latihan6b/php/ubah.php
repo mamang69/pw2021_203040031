@@ -49,7 +49,7 @@ if (isset($_POST['ubah'])) {
             <ul>
                 <li>
                     <label for="img">Gambar :</label><br>
-                    <input type="file" name="img" id="img" require value="<?= $paint['img']; ?>"><br><br>
+                    <input type="text" name="img" id="img" require value="<?= $paint['img']; ?>"><br><br>
                 </li>
                 <li>
                     <label for="judul">Judul :</label><br>
