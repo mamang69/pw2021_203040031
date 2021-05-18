@@ -3,8 +3,8 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan 12 - 07 mei 2021
-registrasi
+Pertemuan 18  mei 2021
+upload gambar dan ajax
 */
 ?>
 
@@ -44,10 +44,10 @@ function upload()
 
   //ketika tidak ada gambar yang dipilih
   if ($eror == 4) {
-    echo "<script>
-            alert('pilih gambar terlebih dahulu!');
-          </script>";
-    return false;
+    // echo "<script>
+    //         alert('pilih gambar terlebih dahulu!');
+    //       </script>";
+    return 'nopoto.png';
   }
 
   //cek ekstensi file
@@ -60,7 +60,32 @@ function upload()
           </script>";
     return false;
   }
+
+  //cek tipe file
+  if ($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
+    echo "<script>
+            alert('yang anda pilih bukan gambar');
+           </script>";
+    return false;
+  }
+  // cek ukuran file
+  // maksimal 5mb = 5000000
+  if ($ukuran_file > 5000000) {
+    echo "<script>
+            alert('ukuran file terlalu besar');
+           </script>";
+    return false;
+  }
+  // lolos pengecekan 
+  // siap upload file
+  // generate nama file baru
+  $nama_file_baru = uniqid();
+  $nama_file_baru .= '.';
+  $nama_file_baru .= $ekstensi_file;
+  move_uploaded_file($tmp_file, 'img/' . $nama_file_baru);
+  return $nama_file_baru;
 }
+
 
 function tambah($data)
 {
@@ -71,15 +96,13 @@ function tambah($data)
   $skill = htmlspecialchars($data['skill']);
   // $gambar = htmlspecialchars($data['gambar']);
 
-
-
   //upload gambar
   $gambar = upload();
   if (!$gambar) {
     return false;
   }
 
-  $query = "INSERT INTO anime VALUES(null,'$judul','$nama','$skill','$gambar');";
+  $query = "INSERT INTO anime VALUES(null,'$gambar','$judul','$nama','$skill');";
 
 
   mysqli_query($conn, $query);
@@ -90,9 +113,17 @@ function tambah($data)
 function hapus($id)
 {
   $conn = koneksi();
+
+  //menghapus gambar di folder
+  $an = query("SELECT * FROM anime WHERE id = $id");
+  if ($an['gambar'] != 'nopoto.png') {
+    unlink('img/' . $an['gambar']);
+  }
+
   mysqli_query($conn, "DELETE FROM anime WHERE id=$id") or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
+
 
 function ubah($data)
 {
@@ -101,7 +132,16 @@ function ubah($data)
   $judul = htmlspecialchars($data['judul']);
   $nama = htmlspecialchars($data['nama']);
   $skill = htmlspecialchars($data['skill']);
-  $gambar = htmlspecialchars($data['gambar']);
+  $gambar_lama = htmlspecialchars($data['gambar_lama']);
+
+  $gambar = upload();
+  if (!$gambar) {
+    return false;
+  }
+
+  if ($gambar == 'nopoto.png') {
+    $gambar = $gambar_lama;
+  }
 
   $query = "UPDATE anime SET
   judul = '$judul',

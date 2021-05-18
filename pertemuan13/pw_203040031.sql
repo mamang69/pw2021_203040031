@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Apr 2021 pada 09.00
+-- Waktu pembuatan: 18 Bulan Mei 2021 pada 04.20
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.11
 
@@ -50,10 +50,28 @@ INSERT INTO `anime` (`id`, `gambar`, `judul`, `nama`, `skill`) VALUES
 (8, 'jin.jpg', 'God Of High School', 'Jin Mori', 'Monkey King wukong'),
 (9, 'iza.png', 'Mondaiji Tachi', 'Sakamaki Izayoi', 'Unkwon'),
 (10, 'meli.jpg', 'Nanatsu No Taizai', 'Meliodas', 'Asault Demon Mode'),
-(11, '', 'OverLord', 'Ainz Oowlgown', 'Magic Tier 10+'),
-(12, 'fdsfsd', 'dfssd', 'dfsdf', 'sdfsd'),
-(13, 'sadas', 'asdas', 'sadasd', 'sad'),
-(14, 'fbgb', 'nvb', 'bvnvb', 'bvn');
+(29, '60a2836546125.jpeg', 'tamvan dan pemveranii', 'Eldi Anugrah Pratama', '500000 iq');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(3, 'pw', '$2y$10$FgdRlDo38Ome3s71M0hKoOMxS10clNvrqXTxgJrxUJi1yltBMyvdK'),
+(4, 'admin', '$2y$10$v7x6gMs/y77hdiS/wk.OpuqOFzNfZjoXcsAcrmaVzOuibxbgWm3GG'),
+(7, 'mamang123', '$2y$10$CF7TzVJ7e2VUlXef9iNm..vcTVi/vM1uR6mxtFMuyIKk9zdBTuF7y');
 
 --
 -- Indexes for dumped tables
@@ -66,6 +84,12 @@ ALTER TABLE `anime`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -73,7 +97,13 @@ ALTER TABLE `anime`
 -- AUTO_INCREMENT untuk tabel `anime`
 --
 ALTER TABLE `anime`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

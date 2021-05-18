@@ -3,8 +3,8 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan 12 - 07 mei 2021
-registrasi
+Pertemuan 18  mei 2021
+upload gambar dan ajax
 */
 ?>
 <?php

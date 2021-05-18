@@ -3,8 +3,8 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan 12 - 07 mei 2021
-registrasi
+Pertemuan 18  mei 2021
+upload gambar dan ajax
 */
 ?>
 
@@ -56,7 +56,7 @@ if (isset($_POST['ubah'])) {
 
 <body>
   <h3>Form Ubah Data</h3>
-  <form action="" method="POST">
+  <form action="" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $an['id']; ?>">
     <ul>
       <li>
@@ -78,10 +78,12 @@ if (isset($_POST['ubah'])) {
         </label>
       </li>
       <li>
+        <input type="hiden" name="gambar_lama" value="<?= $an['gambar']; ?>">
         <label>
           gambar :
-          <input type="file" name="gambar" required value="<?= $an['gambar']; ?>">
+          <input type="file" name="gambar" class="gambar" onchange="previewImage()">
         </label>
+        <img src="img/<?= $an['gambar']; ?>" width="120" style="display:block;" class="img-preview">
       </li>
       <li>
         <button type="submit" name="ubah"> Ubah data Anime</button>
@@ -89,6 +91,7 @@ if (isset($_POST['ubah'])) {
     </ul>
 
   </form>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -3,8 +3,8 @@
 Eldi Anugrah Pratama
 203040031
 https://github.com/mamang69/pw2021_203040031
-Pertemuan 12 - 07 mei 2021
-registrasi
+Pertemuan 18  mei 2021
+upload gambar dan ajax
 */
 ?>
 
@@ -53,31 +53,33 @@ if (isset($_POST['tambah'])) {
           judul :
           <input type="text" name="judul" autofocus required>
         </label>
-      </li>
+      </li><br>
       <li>
         <label>
           nama :
           <input type="text" name="nama" required>
         </label>
-      </li>
+      </li><br>
       <li>
         <label>
           skill :
           <input type="text" name="skill" required>
         </label>
       </li>
-      <li>
+      <li><br>
         <label>
           gambar :
-          <input type="file" name="gambar">
+          <input type="file" name="gambar" class="gambar" onchange="previewImage()">
         </label>
-      </li>
+        <img src="img/nopoto.png" width="120" style="display:block;" class="img-preview">
+      </li><br>
       <li>
         <button type="submit" name="tambah"> Tambah data</button>
       </li>
     </ul>
 
   </form>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
