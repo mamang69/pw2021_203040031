@@ -1,4 +1,3 @@
-
 <?php
 
 function koneksi()
@@ -12,7 +11,7 @@ function query($query)
 
   $result = mysqli_query($conn, $query);
 
-  // jika hasilnya hanya 1 data
+
   if (mysqli_num_rows($result) == 1) {
     return mysqli_fetch_assoc($result);
   }
@@ -24,15 +23,65 @@ function query($query)
 
   return $rows;
 }
+
+function upload()
+{
+  $nama_file = $_FILES['img']['name'];
+  $tipe_file = $_FILES['img']['type'];
+  $ukuran_file = $_FILES['img']['size'];
+  $eror = $_FILES['img']['error'];
+  $tmp_file = $_FILES['img']['tmp_name'];
+
+
+  if ($eror == 4) {
+    return 'nopoto.png';
+  }
+
+
+  $daftar_gambar = ['jpg', 'jpeg', 'png'];
+  $ekstensi_file = explode('.', $nama_file);
+  $ekstensi_file = strtolower(end($ekstensi_file));
+  if (!in_array($ekstensi_file, $daftar_gambar)) {
+    echo "<script>
+            alert('yang anda pilih bukan gambar!');
+          </script>";
+    return false;
+  }
+
+
+  if ($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
+    echo "<script>
+            alert('yang anda pilih bukan gambar');
+           </script>";
+    return false;
+  }
+
+  if ($ukuran_file > 5000000) {
+    echo "<script>
+            alert('ukuran file terlalu besar');
+           </script>";
+    return false;
+  }
+
+  $nama_file_baru = uniqid();
+  $nama_file_baru .= '.';
+  $nama_file_baru .= $ekstensi_file;
+  move_uploaded_file($tmp_file, '../aset/img/' . $nama_file_baru);
+  return $nama_file_baru;
+}
 function tambah($data)
 {
   $conn = koneksi();
 
-  $img = htmlspecialchars($data['img']);
+
   $judul = htmlspecialchars($data['judul']);
   $harga = htmlspecialchars($data['harga']);
   $deskripsi = htmlspecialchars($data['deskripsi']);
   $Stok = htmlspecialchars($data['stok']);
+  $img = upload();
+  if (!$img) {
+    return false;
+  }
 
   $query = "INSERT INTO paint
                   VALUES
@@ -46,6 +95,13 @@ function tambah($data)
 function hapus($id)
 {
   $conn = koneksi();
+
+
+  $paint = query("SELECT * FROM paint WHERE id = $id");
+  if ($paint['img'] != 'nopoto.png') {
+    unlink('../aset/img/' . $paint['img']);
+  }
+
   mysqli_query($conn, "DELETE FROM paint WHERE id=$id") or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
@@ -54,16 +110,26 @@ function ubah($data)
 {
   $conn = koneksi();
   $id = htmlspecialchars($data['id']);
-  $img = htmlspecialchars($data['img']);
+
+  $img = upload();
   $judul = htmlspecialchars($data['judul']);
   $harga = htmlspecialchars($data['harga']);
   $deskripsi = htmlspecialchars($data['deskripsi']);
   $Stok = htmlspecialchars($data['stok']);
+  $gambar_lama = htmlspecialchars($data['gambar_lama']);
 
+
+  if (!$img) {
+    return false;
+  }
+
+  if ($img == 'nopoto.png') {
+    $img = $gambar_lama;
+  }
 
   $query = "UPDATE paint 
                     SET 
-                    img='img',
+                    img='$img',
                     judul='$judul',
                     harga='$harga',
                     deskripsi='$deskripsi',

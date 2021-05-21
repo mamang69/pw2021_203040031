@@ -43,6 +43,7 @@ if (isset($_POST['ubah'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../pw2021_203040008/latihan4b/css/style.css">
+  <link rel="icon" href="../aset/img/palet.png">
 
   <title>My Shop</title>
 </head>
@@ -52,12 +53,16 @@ if (isset($_POST['ubah'])) {
 
     <h3>Form Ubah Data </h3>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="id" id="id" value="<?= $paint['id']; ?>">
       <ul>
         <li>
-          <label for="img">Img :</label><br>
-          <input type="text" name="img" id="img" required value="<?= $paint['img']; ?>"><br><br>
+          <input type="hiden" name="gambar_lama" value="<?= $paint['img']; ?>">
+          <label>
+            gambar :
+            <input type="file" name="img" class="img" onchange="previewImage()">
+          </label>
+          <img src="../aset/img/<?= $paint["img"]; ?>" width="120" style="display:block;" class="img-preview">
         </li>
         <li>
           <label for="judul">Judul :</label><br>
@@ -83,6 +88,7 @@ if (isset($_POST['ubah'])) {
       </ul>
     </form>
   </div>
+  <script src="../js/script.js"></script>
 
 </body>
 

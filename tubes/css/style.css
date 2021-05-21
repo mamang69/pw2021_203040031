@@ -1,7 +1,12 @@
  nav ul a,
  nav .brand-logo {
-   color: #444;
+   color: rgb(255, 255, 255);
  }
+ 
+ body{
+  font-family: 'Poppins', sans-serif;
+}
+
  
  p {
    line-height: 2rem;
@@ -25,6 +30,11 @@
    .parallax-container .section {
      width: 100%;
    }
+
+   .parallax-container{
+       text-shadow: 1px 1px 10px rgba(107, 107, 107, 0.9);
+   }
+   
  
  @media only screen and (max-width : 992px) {
    .parallax-container .section {

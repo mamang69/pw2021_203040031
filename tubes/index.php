@@ -29,7 +29,9 @@ if (isset($_POST['cari'])) {
 
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
@@ -166,7 +168,7 @@ if (isset($_POST['cari'])) {
   </footer>
   <!--  Scripts-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/ajax.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script>
     const sidenav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(sidenav);
