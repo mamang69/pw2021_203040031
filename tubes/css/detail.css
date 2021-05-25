@@ -1,8 +1,13 @@
 nav ul a,
- nav .brand-logo {
-   color: #444;
- }
- 
+nav .brand-logo {
+  color: rgb(255, 255, 255);
+}
+
+body{
+ font-family: 'Poppins', sans-serif;
+}
+
+
  p {
    line-height: 2rem;
  }

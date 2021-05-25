@@ -21,6 +21,9 @@
   width: 400px;
   margin-left: 600px;
 }
+.slider {
+  text-shadow: 1px 1px 10px rgba(110, 110, 110, 0.5);
+}
  .parallax-container {
    min-height: 380px;
    line-height: 0;

@@ -36,12 +36,12 @@ if (isset($_POST['cari'])) {
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
-<body>
+<body id="home" class="scrollspy">
   <!---Nav----->
   <nav class=" teal accent-4" role="navigation">
     <div class="nav-wrapper container">
 
-      <a id="logo-container" href="#" class="brand-logo">Mamang'shOp</a>
+      <a id="logo-container" href="#home" class="brand-logo">Mamang'shOp</a>
 
       <ul class="right hide-on-med-and-down">
         <li><a href="php/logout.php">logout</a></li>
@@ -125,7 +125,7 @@ if (isset($_POST['cari'])) {
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">Mamang'shOp the best decorations shop</h5>
         </div>
       </div>
     </div>
@@ -143,19 +143,16 @@ if (isset($_POST['cari'])) {
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="white-text" href="#home">home</a></li>
+
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/mamangeldi69/?hl=id">Follow our leader instagram 1</a></li>
+            <li><a class="white-text" href="https://www.youtube.com/channel/UCY7SYuhsM4LgvDz3rm2z4Kw">Subscribe our leader youtube</a></li>
+
           </ul>
         </div>
       </div>
